@@ -10,9 +10,13 @@
 <body>
     <div id="app">
         <main>
-            <div class="normal">
-                <p> {{ listEmail }}</p>
+            <div class="esercizio-base">
+                <p>LISTA MAIL:</p>
+                <div class="normal" v-for="(email,index) in listEmail">
+                    <p> {{ email }}</p>
+                </div>
             </div>
+
         </main>
     </div>
     <script type="text/javascript" src="./js/script.js"></script>

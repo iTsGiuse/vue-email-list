@@ -5,6 +5,7 @@ createApp({
         return {
             listEmail: [],
             email:'',
+            nEmail: 9,
         };
     },
     methods: {
@@ -14,12 +15,20 @@ createApp({
             then((response) => {
                 const serverData = response.data;
                 this.email = serverData.response;
-                this.listEmail.push(this.email)
-                console.log(listEmail)
+                this.listEmail.push(this.email);
             });
+        },
+
+        generaDieciMail(nEmail){
+            for(let i = 0; i<this.nEmail; i++){
+            this.getEmailFromApi();
+            }
         }
+
     },
+
     mounted() {
+        this.generaDieciMail();
         this.getEmailFromApi();
     }
 }).mount('#app');
