@@ -6,17 +6,29 @@
     <title>Vue Email List</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div id="app">
         <main>
             <div class="esercizio-base">
-                <p>LISTA MAIL:</p>
-                <div class="normal" v-for="(email,index) in listEmail">
+                <h3>LISTA MAIL BASE:</h3>
+                <div class="normal" v-for="(email,index) in listEmail" :key="index">
                     <p> {{ email }}</p>
                 </div>
             </div>
 
+            <div class="esercizio-bonus">
+                <div v-if="emailGenerate">
+                    <h3>LISTA MAIL BASE:</h3>
+                    <div v-for="(email, index) in listEmail" :key="index">
+                        <p >{{ email }}<p>
+                    </div>
+                </div>
+                <div v-else>
+                    <p>Generazione degli indirizzi email in corso...</p>
+                </div>
+            </div>
         </main>
     </div>
     <script type="text/javascript" src="./js/script.js"></script>
